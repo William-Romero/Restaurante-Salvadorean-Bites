@@ -1,20 +1,180 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Contáctanos | Delicious Bites</title>
-       <!------------------------Estilos-------------------------->
-        <style>
-            body { font-family: Arial, sans-serif; margin: 0; background: #faf6f2; color: #333; }
-            header { background: #a83232; color: #fff; padding: 2rem 1rem; text-align: center; }
-            .container { max-width: 700px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; }
-            h2 { color: #a83232; }
-            footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
-            a.white-link { color: #fff; text-decoration: none; }
-        </style>
-    </head>
-           
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salvadorean Bites</title>
+  
+  <style>
+  /* ---------------------------
+     Variables de tema
+     Definen colores, medidas y valores reutilizables para mantener
+     coherencia visual en todo el sitio.
+     --------------------------- */
+    :root {
+        --brand-bg: #a83232; /* color primario de la marca */
+        --brand-contrast: #fff; /* color de texto sobre el fondo de marca */
+        --muted: #6c757d; /* tono para texto secundario */
+        --container-max: 1100px; /* ancho máximo del contenedor central */
+        --radius: 12px; /* radio de bordes por defecto */
+        --glass-bg: rgba(255,255,255,0.06); /* fondo translúcido usado en componentes */
+    }
+
+    /* ---------------------------
+       Reset y tipografía global
+       Establece box-sizing y estilos base para el cuerpo y el html.
+       --------------------------- */
+    *, *::before, *::after { 
+        box-sizing: border-box; /* hace el cálculo de tamaños más predecible */
+    }
+    
+    html {
+        scroll-behavior: smooth; /* desplazamiento suave al navegar por anclas */
+    }
+    
+    body {
+        margin: 0; /* elimina margen por defecto del navegador */
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; /* pila tipográfica */
+        color: #222; /* color de texto primario */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #fff; /* fondo general */
+        line-height: 1.5; /* interlineado cómodo */
+    }
+
+    /* ---------------------------
+       Contenedor principal
+       Centra el contenido y aplica relleno lateral.
+       --------------------------- */
+    .container {
+        max-width: var(--container-max);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* ---------------------------
+       Navegación (navbar)
+       Estilos del header fijo/pegajoso que contiene marca y enlaces.
+       --------------------------- */
+    .site-nav {
+        background: var(--brand-bg); /* color de fondo del navbar */
+        color: var(--brand-contrast); /* color del texto en el navbar */
+        position: sticky; /* queda pegado en la parte superior al hacer scroll */
+        top: 0;
+        z-index: 1000; /* se superpone al resto del contenido */
+    }
+
+    /* Contenedor interno del nav: alinea elementos en una fila */
+    .nav-inner {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        min-height: 60px; /* altura mínima del navbar */
+    }
+
+    /* Marca / logo como enlace */
+    .brand {
+        color: var(--brand-contrast);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.05rem;
+    }
+
+    /* ---------------------------
+       Toggle para menú móvil
+       Usa un checkbox oculto más una etiqueta para simular el botón
+       que muestra/oculta los enlaces en pantallas pequeñas.
+       --------------------------- */
+    .nav-toggle {
+        display: none; /* checkbox invisible en escritorio */
+    }
+
+    .nav-toggle-label {
+        display: none; /* se muestra sólo en pantallas pequeñas vía media queries */
+        cursor: pointer;
+        color: var(--brand-contrast);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin-left: auto; /* empuja el toggle al final del eje */
+    }
+
+    /* Enlaces del navbar (fila en desktop) */
+    .nav-links {
+        margin-left: auto; /* empuja los enlaces al extremo derecho */
+        display: flex;
+        gap: 1rem; /* espacio entre enlaces */
+    }
+
+    .nav-link {
+        color: var(--brand-contrast);
+        text-decoration: none;
+        padding: 0.55rem 0.5rem;
+        border-radius: 8px; /* esquinas redondeadas al pasar el ratón */
+        transition: background 0.3s ease; /* transición suave en hover */
+    }
+
+    .nav-link:hover {
+        background: rgba(255,255,255,0.1); /* efecto visual al pasar el cursor */
+    }
+
+    /* ---------------------------
+       Hero (sección principal destacada)
+       Imagen de fondo con capa oscura y contenido centrado.
+       --------------------------- */
+    .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* altura relativa a la ventana */
+    background-image: url("pupusas.jpg"); /* imagen de fondo */
+    background-position: center;
+    background-size: cover; /* ocupa todo el contenedor */
+    background-repeat: no-repeat;
+    color: var(--brand-contrast);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 0; /* margen lateral */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+    }
+
+
+    /* Capa oscura sobre la imagen para mejorar contraste del texto */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(153, 152, 152, 0.45), rgba(173, 172, 172, 0.55));
+        z-index: 0;
+    }
+
+    /* Contenido dentro del hero, por encima de la capa oscura */
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 900px;
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem); /* tamaño responsivo */
+        margin: 0 0 0.5rem;
+        color: var(--brand-contrast);
+        font-weight: 700;
+    }
+
+    .hero-sub {
+        margin: 0;
+        color: rgba(255,255,255,0.95); /* subtítulo con alta legibilidad */
+        font-size: clamp(0.95rem, 2.1vw, 1.1rem);
+    }
     <body>
                  <!-------------------cuerpo de la pagina----------------------->
 
@@ -78,4 +238,5 @@
             &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
         </footer>
     </body>
+
     </html>
