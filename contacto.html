@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Salvadorean Bites</title>
-  
-  <style>
- :root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
+    <title>salvadorean bites</title>
+
+   <style>
+   :root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
+   
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
     header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
@@ -24,69 +25,122 @@
     header h1, #menu-title { text-align:center; margin:.25rem 0; }
     .section-title{display:block;text-align:center;margin:0 0 .6rem 0}
     .section-title h3{color:var(--brand);margin:0;font-size:1.05rem;display:inline-block}
-    <body>
-                 <!-------------------cuerpo de la pagina----------------------->
+    /* ------------- estilo de la caja de contacto 1 columna  temas centrados -------------- */
+    #contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
 
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
 
-                      <!------------cabecera-------------------------->
-          <header>
+    #contact label {
+      text-align: left;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    #contact button {
+      padding: 0.75rem;
+      background-color: #a83232;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    #contact button:hover {
+      background-color: darken(#a83232, 10%);
+    }
+    /* estilos del footer con el mismo diseño que el resto de la página */
+    footer {
+      background: var(--brand);
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    </style>
+ 
+ 
+ <header>
     <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" class="logo" />
     <nav aria-label="Navegación principal">
-      <a href="quienes-somos"aria-current="page" >Quiénes Somos</a>
-      <a href="Index.html" >Menú</a>
-      <a href="promos">Promociones</a>
-      <a href="galeria">Galería</a>
-      <a href="contacto">Contáctanos</a>
+      <a href="quienes-somos.html"aria-current="page" >Quiénes Somos</a>
+      <a href="index.html" >Menú</a>
+      <a href="promos.html">Promociones</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html">Contáctanos</a>
     </nav>
     <h1>Salvadorean Bites</h1>
     <p>Fresh. Local. Tasty.</p>
   </header>
-        <main>
-        <!------------------------caja de contacto-------------------------->
+ 
+ <!------------------------caja de contacto-------------------------->
         <div class="container">
-            <section id="contact">
-                <h2>Contáctanos</h2>
-                <form action="#" method="post" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-                    
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-                    
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="5" required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-                    
-                    <button type="submit" style="padding: 0.75rem; background-color: #a83232; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
-                </form>
-            </section>
+            <section id="contact" style="display: flex; justify-content: center; align-items: center; padding: 2rem;">
+  <div style="width: 100%; max-width: 500px; text-align: center;">
+    <h2 style="margin-bottom: 1.5rem; color: #a83232;">Contáctanos</h2>
+    <form action="localhost" method="post" style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+      
+      <label for="name" style="text-align: left;">Nombre:</label>
+      <input type="text" id="name" name="name" required 
+             style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; width: 100%;">
+
+      <label for="email" style="text-align: left;">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" required 
+             style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; width: 100%;">
+
+      <label for="message" style="text-align: left;">Mensaje:</label>
+      <textarea id="message" name="message" rows="5" required 
+                style="padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; width: 100%; resize: none;"></textarea>
+
+      <button type="submit" 
+              style="padding: 0.75rem; background-color: #a83232; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s;">
+        Enviar
+      </button>
+    </form>
+  </div>
+</section>
+
         </div>
         </main>
-
-                        <!------------------------footer-------------------------->
-        <footer>
-            <h2>Ubicación y Contacto</h2>
-            <p><strong>Dirección:</strong> Unicentro, Soyapango, San Salvador
-            <a href="https://www.google.com/maps/place/Unicentro+Soyapango/@13.7085801,-89.1399873,15z/data=!4m6!3m5!1s0x8f633b5f2f5f4d7d:0x8c6e4f3e4e4e4e4e!8m2!3d13.7085801!4d-89.1399873!16s%2Fg%2F11c52_5y1h" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link"> Ver en mapa</a>
-            </p>
-
-            <p><strong>Horarios:</strong> Lunes a Sábado: 10:00 AM - 10:00 PM<br>
-                Domingos: 10:00 AM - 8:00 PM</p>
-
-            <p><strong>Teléfono:</strong> 
-             <a href="https://wa.me/50369739021" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link">
-                +503 6973 9021
-             </a>
-            </p>
-
-            &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
-        </footer>
-    </body>
-
-    </html>
+        <!-- Footer -->
+    <footer id="contacto" class="site-footer">
+        <div class="footer-inner">
+            <p><a href="https://wa.me/50369739021" class="footer-link">📱 +503 6973-9021</a></p>
+            <p><a href="tel:+50322223333" class="footer-link">📞 +503 2222-3333</a></p>
+            <p><a href="mailto:contacto@salvadoreanbites.com" class="footer-link">✉️ contacto@salvadoreanbites.com</a></p>
+            <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank" class="footer-link">📍 Unicentro Soyapango, San Salvador</a></p>
+            <small>&copy; 2025 Salvadorean Bites. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+</body>
+</html>
 
