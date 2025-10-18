@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Promociones</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="header&footer.css">
   <style>
     body {
       background-color: #fff8f0;
@@ -42,30 +43,40 @@
     }
 	footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
             a.white-link { color: #fff; text-decoration: none; }
-	header { background: #a83232; color: #fff; padding: 2rem 1rem; text-align: center; }
-            
+:root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
+    .logo{width:120px;height:120px;border-radius:50%;display:block;margin:0 auto .5rem;object-fit:cover}
+
+    nav[aria-label="Navegación principal"]{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
+    nav a{color:#fff;text-decoration:none;margin:.2rem .4rem;font-weight:700;padding:.3rem .5rem;border-radius:6px}
+    main{max-width:980px;margin:1.5rem auto;padding:0 1rem}
+    .card{background:var(--card);border-radius:10px;padding:1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .menu-nav{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:.5rem 0 1rem}
+    .menu-nav a{background:rgba(168,50,50,.08);color:var(--brand);padding:.35rem .6rem;border-radius:6px;text-decoration:none;font-weight:700}
+    .menu-section{padding:1rem;border-top:1px solid #f1f1f1;margin-top:.5rem}
+    .menu-section:first-of-type{border-top:none;padding-top:0}	
+header h1, #menu-title { text-align:center; margin:.25rem 0; }
+    .section-title{display:block;text-align:center;margin:0 0 .6rem 0}
+    .section-title h3{color:var(--brand);margin:0;font-size:1.05rem;display:inline-block}
+
   </style>
 </head>
 <body>
 
-	<header style="background-color:#b30000; color:white; display:flex; align-items:center; justify-content:space-between; padding:0.5rem 1.5rem; height:100px; flex-wrap:wrap;">
-    	<div style="display:flex; align-items:center;">
-        <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" 
-             alt="Salvadorean Bites" 
-             style="width:80px; height:80px; border-radius:50%; margin-right:1rem;">
-        <div>
-            <h1 style="margin:0; font-size:1.5rem;">Salvadorean Bites</h1>
-            <p style="margin:0; font-size:0.9rem;">Fresh. Local. Tasty.</p>
-        </div>
-    	</div>
-
-	<nav>
-    	<a href="quienes-somos.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Quiénes Somos</a>
-    	<a href="menu.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Menú</a>
-    	<a href="galeria.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Galería</a>
-    	<a href="contacto.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Contáctanos</a>
-	</nav>
-	</header>
+	<header>
+    <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" class="logo" />
+    <nav aria-label="Navegación principal">
+      <a href="quienes-somos"aria-current="page" >Quiénes Somos</a>
+      <a href="Index.html" >Menú</a>
+      <a href="promos">Promociones</a>
+      <a href="galeria">Galería</a>
+      <a href="contacto">Contáctanos</a>
+    </nav>
+    <h1>Salvadorean Bites</h1>
+    <p>Fresh. Local. Tasty.</p>
+  </header>
 
 <section id="promociones" class="container">
   <h2>Promociones</h2>
@@ -110,29 +121,18 @@
   </div>
 </section>	
 
-  	<footer>
-            <h2>Ubicación y Contacto</h2>
-            <p><strong>Dirección:</strong> Unicentro, Soyapango, San Salvador
-            <a href="https://www.google.com/maps/place/Unicentro+Soyapango/@13.7085801,-89.1399873,15z/data=!4m6!3m5!1s0x8f633b5f2f5f4d7d:0x8c6e4f3e4e4e4e4e!8m2!3d13.7085801!4d-89.1399873!16s%2Fg%2F11c52_5y1h" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link"> Ver en mapa</a>
-            </p>
-
-            <p><strong>Horarios:</strong> Lunes a Sábado: 10:00 AM - 10:00 PM<br>
-                Domingos: 10:00 AM - 8:00 PM</p>
-
-            <p><strong>Teléfono:</strong> 
-             <a href="https://wa.me/50369739021" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link">
-                +503 6973 9021
-             </a>
-            </p>
-
-            &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
-        </footer>
+  	<footer id="contacto" class="bg-danger text-light py-4">
+        <div class="container text-center">
+            <p><a href="https://wa.me/50369739021" class="text-white text-decoration-none"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p>
+            <p><a href="tel:+50322223333" class="text-white text-decoration-none"><i class="bi bi-telephone"></i> +503 2222-3333</a></p>
+            <p><a href="mailto:contacto@salvadoreanbites.com" class="text-white text-decoration-none"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p>
+            <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank" class="text-white text-decoration-none"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
+            <small>&copy; 2025 Salvadorean Bite. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
