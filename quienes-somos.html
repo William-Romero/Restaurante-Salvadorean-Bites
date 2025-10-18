@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,18 +5,170 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Quiénes somos | Salvadorean Bites</title>
 	<style>
-		:root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
-		*{box-sizing:border-box}
-		body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-		header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
-		.brand{display:flex;align-items:center;gap:1rem;justify-content:center}
-		.brand img{width:84px;height:84px;border-radius:50%;object-fit:cover}
-		.brand-text h1{margin:.15rem 0;font-size:1.35rem}
-		.brand-text p{margin:0;font-size:.9rem;opacity:.95}
+	 :root {
+        --brand-bg: #a83232; /* color primario de la marca */
+        --brand-contrast: #fff; /* color de texto sobre el fondo de marca */
+        --muted: #6c757d; /* tono para texto secundario */
+        --container-max: 1100px; /* ancho máximo del contenedor central */
+        --radius: 12px; /* radio de bordes por defecto */
+        --glass-bg: rgba(255,255,255,0.06); /* fondo translúcido usado en componentes */
+    }
 
-		nav[aria-label="Navegación principal"]{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
-		nav a{color:#fff;text-decoration:none;margin:.2rem .4rem;font-weight:700;padding:.3rem .5rem;border-radius:6px}
+    /* ---------------------------
+       Reset y tipografía global
+       Establece box-sizing y estilos base para el cuerpo y el html.
+       --------------------------- */
+    *, *::before, *::after { 
+        box-sizing: border-box; /* hace el cálculo de tamaños más predecible */
+    }
+    
+    html {
+        scroll-behavior: smooth; /* desplazamiento suave al navegar por anclas */
+    }
+    
+    body {
+        margin: 0; /* elimina margen por defecto del navegador */
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; /* pila tipográfica */
+        color: #222; /* color de texto primario */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #fff; /* fondo general */
+        line-height: 1.5; /* interlineado cómodo */
+    }
 
+    /* ---------------------------
+       Contenedor principal
+       Centra el contenido y aplica relleno lateral.
+       --------------------------- */
+    .container {
+        max-width: var(--container-max);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* ---------------------------
+       Navegación (navbar)
+       Estilos del header fijo/pegajoso que contiene marca y enlaces.
+       --------------------------- */
+    .site-nav {
+        background: var(--brand-bg); /* color de fondo del navbar */
+        color: var(--brand-contrast); /* color del texto en el navbar */
+        position: sticky; /* queda pegado en la parte superior al hacer scroll */
+        top: 0;
+        z-index: 1000; /* se superpone al resto del contenido */
+    }
+
+    /* Contenedor interno del nav: alinea elementos en una fila */
+    .nav-inner {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        min-height: 60px; /* altura mínima del navbar */
+    }
+
+    /* Marca / logo como enlace */
+    .brand {
+        color: var(--brand-contrast);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.05rem;
+    }
+
+    /* ---------------------------
+       Toggle para menú móvil
+       Usa un checkbox oculto más una etiqueta para simular el botón
+       que muestra/oculta los enlaces en pantallas pequeñas.
+       --------------------------- */
+    .nav-toggle {
+        display: none; /* checkbox invisible en escritorio */
+    }
+
+    .nav-toggle-label {
+        display: none; /* se muestra sólo en pantallas pequeñas vía media queries */
+        cursor: pointer;
+        color: var(--brand-contrast);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin-left: auto; /* empuja el toggle al final del eje */
+    }
+
+    /* Enlaces del navbar (fila en desktop) */
+    .nav-links {
+        margin-left: auto; /* empuja los enlaces al extremo derecho */
+        display: flex;
+        gap: 1rem; /* espacio entre enlaces */
+    }
+
+    .nav-link {
+        color: var(--brand-contrast);
+        text-decoration: none;
+        padding: 0.55rem 0.5rem;
+        border-radius: 8px; /* esquinas redondeadas al pasar el ratón */
+        transition: background 0.3s ease; /* transición suave en hover */
+    }
+
+    .nav-link:hover {
+        background: rgba(255,255,255,0.1); /* efecto visual al pasar el cursor */
+    }
+
+    /* ---------------------------
+       Hero (sección principal destacada)
+       Imagen de fondo con capa oscura y contenido centrado.
+       --------------------------- */
+    .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* altura relativa a la ventana */
+    background-image: url("pupusas.jpg"); /* imagen de fondo */
+    background-position: center;
+    background-size: cover; /* ocupa todo el contenedor */
+    background-repeat: no-repeat;
+    color: var(--brand-contrast);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 0; /* margen lateral */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+    }
+
+
+    /* Capa oscura sobre la imagen para mejorar contraste del texto */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(153, 152, 152, 0.45), rgba(173, 172, 172, 0.55));
+        z-index: 0;
+    }
+
+    /* Contenido dentro del hero, por encima de la capa oscura */
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 900px;
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem); /* tamaño responsivo */
+        margin: 0 0 0.5rem;
+        color: var(--brand-contrast);
+        font-weight: 700;
+    }
+
+    .hero-sub {
+        margin: 0;
+        color: rgba(255,255,255,0.95); /* subtítulo con alta legibilidad */
+        font-size: clamp(0.95rem, 2.1vw, 1.1rem);
+    }
 		main{max-width:980px;margin:1.5rem auto;padding:0 1rem}
 		.card{background:var(--card);border-radius:10px;padding:1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
 
@@ -37,8 +188,31 @@
 		.values-list li{padding:.5rem 0;border-top:1px dashed #f1efee;font-family:Arial,Helvetica,sans-serif;color:var(--muted);line-height:1.45}
 		.values-list li:first-child{border-top:none}
 
-		footer{max-width:980px;margin:1rem auto 2rem;padding:0 1rem;color:var(--muted);font-size:.92rem;text-align:center}
+		 .site-footer {
+        background: var(--brand-bg);
+        color: var(--brand-contrast);
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
 
+    .footer-inner {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .footer-link {
+        color: var(--brand-contrast);
+        text-decoration: none;
+        display: inline-block;
+        margin: 0.3rem 0.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    .footer-link:hover {
+        text-decoration: underline;
+        transform: translateY(-2px);
 		
 		@media (max-width:1024px){
 			main{padding:0 1.5rem}
@@ -90,24 +264,29 @@
 	</style>
 </head>
 <body>
+ <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">Salvadorean Bites</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">☰</label>
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Menú</a>
+                <a class="nav-link" href="galeria.html">Galería</a>
+                <a class="nav-link" href="conocenos.html">Conócenos</a>
+                <a class="nav-link" href="promociones.html">Promociones</a>
+                <a class="nav-link" href="contactanos.html">Contáctanos</a>
+            </div>
+        </div>
+    </nav>
 
-<header class="site-header" aria-label="Encabezado">
-	<div class="brand">
-		<img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites">
-		<div class="brand-text">
-			<h1>Salvadorean Bites</h1>
-			<p>Fresh. Local. Tasty.</p>
-		</div>
-	</div>
-
- <nav class="primary-nav" aria-label="Navegación principal" id="primary-nav">
-    <a href="quienes-somos.html">Quiénes Somos</a>
-    <a href="index.html">Menú</a>
-	<a href="promos.html">Promociones</a>
-    <a href="galeria.html">Galería</a>
-    <a href="contacto.html">Contáctanos</a>
-  </nav>
-</header>
+    <main class="site-main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Salvadorean Bites</h1>
+                <p class="hero-sub">Disfruta de la auténtica comida salvadoreña.</p>
+            </div>
+        </section>
 
 <main>
 	<section class="card" aria-labelledby="qs-title">
@@ -148,32 +327,18 @@
 	</section>
 </main>
 
-	<footer>
-            <h2>Ubicación y Contacto</h2>
-            <p><strong>Dirección:</strong> Unicentro, Soyapango, San Salvador
-            <a href="https://www.google.com/maps/place/Unicentro+Soyapango/@13.7085801,-89.1399873,15z/data=!4m6!3m5!1s0x8f633b5f2f5f4d7d:0x8c6e4f3e4e4e4e4e!8m2!3d13.7085801!4d-89.1399873!16s%2Fg%2F11c52_5y1h" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link"> Ver en mapa</a>
-            </p>
-
-            <p><strong>Horarios:</strong> Lunes a Sábado: 10:00 AM - 10:00 PM<br>
-                Domingos: 10:00 AM - 8:00 PM</p>
-
-            <p><strong>Teléfono:</strong> 
-             <a href="https://wa.me/50369739021" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="white-link">
-                +503 6973 9021
-             </a>
-            </p>
-
-            &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
-        </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	  <footer id="contacto" class="site-footer">
+        <div class="footer-inner">
+            <p><a href="https://wa.me/50369739021" class="footer-link">📱 +503 6973-9021</a></p>
+            <p><a href="tel:+50322223333" class="footer-link">📞 +503 2222-3333</a></p>
+            <p><a href="mailto:contacto@salvadoreanbites.com" class="footer-link">✉️ contacto@salvadoreanbites.com</a></p>
+            <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank" class="footer-link">📍 Unicentro Soyapango, San Salvador</a></p>
+            <small>&copy; 2025 Salvadorean Bites. Todos los derechos reservados.</small>
+        </div>
+    </footer>
 
 </body>
 </html>
+
 
 
