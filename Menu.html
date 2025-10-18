@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menú | Salvadorean Bites</title>
+  <style>
+    :root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
+    .logo{width:120px;height:120px;border-radius:50%;display:block;margin:0 auto .5rem;object-fit:cover}
+
+    nav[aria-label="Navegación principal"]{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
+    nav a{color:#fff;text-decoration:none;margin:.2rem .4rem;font-weight:700;padding:.3rem .5rem;border-radius:6px}
+    main{max-width:980px;margin:1.5rem auto;padding:0 1rem}
+    .card{background:var(--card);border-radius:10px;padding:1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .menu-nav{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:.5rem 0 1rem}
+    .menu-nav a{background:rgba(168,50,50,.08);color:var(--brand);padding:.35rem .6rem;border-radius:6px;text-decoration:none;font-weight:700}
+    .menu-section{padding:1rem;border-top:1px solid #f1f1f1;margin-top:.5rem}
+    .menu-section:first-of-type{border-top:none;padding-top:0}
+
+    header h1, #menu-title { text-align:center; margin:.25rem 0; }
+    .section-title{display:block;text-align:center;margin:0 0 .6rem 0}
+    .section-title h3{color:var(--brand);margin:0;font-size:1.05rem;display:inline-block}
+
+    .section-grid{display:grid;grid-template-columns:1fr 120px;gap:.6rem 1rem;align-items:center}
+    .item{padding:.45rem .25rem;border-radius:6px;background:linear-gradient(180deg,#fff,#f8f6f5)}
+    .item h3{margin:.05rem 0;font-size:1rem}
+    .item p{margin:0;color:var(--muted);font-size:.92rem}
+    .price{font-weight:700;color:var(--brand);text-align:right;align-self:center}
+
+    @media (max-width:900px){
+      .section-grid{grid-template-columns:1fr 100px}
+      .logo{width:100px;height:100px}
+    }
+    @media (max-width:720px){
+      .section-grid{grid-template-columns:1fr}
+      .price{ text-align:left; margin-top:.45rem }
+      .card{padding:1rem}
+      nav[aria-label="Navegación principal"], .menu-nav{gap:.4rem}
+      .logo{width:84px;height:84px}
+    }
+    @media (max-width:420px){
+      header{padding:.9rem .6rem}
+      .logo{width:72px;height:72px}
+      body{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" class="logo" />
+    <nav aria-label="Navegación principal">
+      <a href="Restaurante.html#quienes-somos">Quiénes Somos</a>
+      <a href="Menu.html" aria-current="page">Menú</a>
+      <a href="Restaurante.html#promotions">Promociones</a>
+      <a href="Restaurante.html#gallery">Galería</a>
+      <a href="Restaurante.html#contact">Contáctanos</a>
+    </nav>
+    <h1>Salvadorean Bites</h1>
+    <p>Fresh. Local. Tasty.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="menu-title">
+      <h2 id="menu-title">Menú</h2>
+      <p class="small-note" style="color:var(--muted);margin-top:.25rem"></p>
+
+      <nav class="menu-nav" aria-label="Índice del menú">
+        <a href="#entradas">Entradas</a>
+        <a href="#platos">Platos fuertes</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#postres">Postres</a>
+      </nav>
+
+      <section id="entradas" class="menu-section" aria-labelledby="entradas-title">
+        <div class="section-title">
+          <h3 id="entradas-title">Entradas</h3>
+        </div>
+        <div class="section-grid" role="list">
+          <div class="item" role="listitem">
+            <h3>Yuca frita</h3>
+            <p>Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido.</p>
+          </div>
+          <div class="price">$3.50</div>
+
+          <div class="item" role="listitem">
+            <h3>Empanadas de pollo</h3>
+            <p>Empanadas rellenas de pollo desmenuzado, acompañadas de salsa de tomate y curtido.</p>
+          </div>
+          <div class="price">$2.00</div>
+
+          <div class="item" role="listitem">
+            <h3>Plátanos fritos</h3>
+            <p>Plátanos maduros fritos, servidos con crema y frijoles.</p>
+          </div>
+          <div class="price">$2.50</div>
+        </div>
+      </section>
+
+      <section id="platos" class="menu-section" aria-labelledby="platos-title">
+        <div class="section-title">
+          <h3 id="platos-title">Platos fuertes</h3>
+        </div>
+        <div class="section-grid" role="list">
+          <div class="item" role="listitem">
+            <h3>Carne asada</h3>
+            <p>Deliciosa carne asada a la parrilla, servida con frijoles y ensalada.</p>
+          </div>
+          <div class="price">$5.00</div>
+
+          <div class="item" role="listitem">
+            <h3>Pollo a la parrilla</h3>
+            <p>Jugoso pollo a la parrilla, servido con arroz y ensalada.</p>
+          </div>
+          <div class="price">$5.00</div>
+
+          <div class="item" role="listitem">
+            <h3>Pescado frito</h3>
+            <p>Delicioso pescado frito, servido con arroz y ensalada.</p>
+          </div>
+          <div class="price">$5.00</div>
+
+          <div class="item" role="listitem">
+            <h3>Pupusas tradicionales</h3>
+            <p>Pupusas de frijol con queso, queso y revueltas.</p>
+          </div>
+          <div class="price">$0.75</div>
+
+          <div class="item" role="listitem">
+            <h3>Pupusas de especialidad</h3>
+            <p>Sabrosas pupusas: Chorizo de Cojutepeque, Pollo, Pulled Pork, Birria.</p>
+          </div>
+          <div class="price">$1.50</div>
+        </div>
+      </section>
+
+      <section id="bebidas" class="menu-section" aria-labelledby="bebidas-title">
+        <div class="section-title">
+          <h3 id="bebidas-title">Bebidas</h3>
+        </div>
+        <div class="section-grid" role="list">
+          <div class="item" role="listitem">
+            <h3>Refrescos tradicionales</h3>
+            <p>Elige entre una refrescante horchata, tamarindo o jamaica.</p>
+          </div>
+          <div class="price">$1.50</div>
+
+          <div class="item" role="listitem">
+            <h3>Bebidas calientes</h3>
+            <p>Café, chocolate caliente o té.</p>
+          </div>
+          <div class="price">$1.50</div>
+        </div>
+      </section>
+
+      <section id="postres" class="menu-section" aria-labelledby="postres-title">
+        <div class="section-title">
+          <h3 id="postres-title">Postres</h3>
+        </div>
+        <div class="section-grid" role="list">
+          <div class="item" role="listitem">
+            <h3>Flan</h3>
+            <p>Delicioso flan de vainilla, suave y cremoso.</p>
+          </div>
+          <div class="price">$2.00</div>
+
+          <div class="item" role="listitem">
+            <h3>Quesadilla de la casa</h3>
+            <p>Quesadilla salvadoreña, perfecta para acompañar el café.</p>
+          </div>
+          <div class="price">$2.00</div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer style="background:var(--brand);color:#fff;text-align:center;padding:1rem;margin-top:1.5rem">
+    &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
