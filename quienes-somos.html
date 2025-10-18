@@ -13,18 +13,29 @@
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" style="width:240px; border-radius:50%; margin-bottom:1rem;">
-        <nav style="margin-bottom:1rem;">
-            <a href="quienes-somos.html" style="color:#fff; text-decoration:none; margin:0 1rem; font-weight:bold;">Quiénes Somos</a>
-            <a href="menu.html" style="color:#fff; text-decoration:none; margin:0 1rem; font-weight:bold;">Menú</a>
-            <a href="promociones.html" style="color:#fff; text-decoration:none; margin:0 1rem; font-weight:bold;">Promociones</a>
-            <a href="galeria.html" style="color:#fff; text-decoration:none; margin:0 1rem; font-weight:bold;">Galería</a>
-            <a href="contacto.html" style="color:#fff; text-decoration:none; margin:0 1rem; font-weight:bold;">Contáctanos</a>
-        </nav>
-        <h1>Salvadorean Bites</h1>
-        <p>Fresh. Local. Tasty.</p>
-    </header>
+   <header class="site-header" aria-label="Encabezado">
+  <div class="brand">
+    <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites">
+    <div class="brand-text">
+      <h1>Salvadorean Bites</h1>
+      <p>Fresh. Local. Tasty.</p>
+    </div>
+  </div>
+
+  <!-- Toggle sin JS -->
+  <input type="checkbox" id="nav-check" aria-hidden="true">
+  <label for="nav-check" class="nav-toggle" aria-label="Abrir/cerrar menú">
+    <span class="bars" aria-hidden="true"></span> Menú
+  </label>
+
+  <nav class="primary-nav" aria-label="Navegación principal" id="primary-nav">
+    <a href="quienes-somos.html">Quiénes Somos</a>
+    <a href="menu.html">Menú</a>
+    <a href="galeria.html">Galería</a>
+    <a href="contacto.html">Contáctanos</a>
+  </nav>
+</header>
+
     <div class="container">
         <section id="quienes-somos">
             <h2>Quiénes Somos</h2>
@@ -42,8 +53,47 @@
             </p>
         </section>
     </div>
-    <footer>
-        &copy; 2024 Salvadorean Bites. Todos los derechos reservados.
-    </footer>
+    <footer class="site-footer" aria-labelledby="footer-title">
+  <div class="footer-decor" aria-hidden="true"></div>
+
+  <div class="footer-inner">
+    <section class="footer-block">
+      <h2 id="footer-title" class="footer-title">Ubicación y Contacto</h2>
+
+      <address class="footer-address">
+        <p class="footer-line">
+          <strong>Dirección:</strong>
+          <span> Unicentro, Soyapango, San Salvador </span>
+          <a
+            href="https://www.google.com/maps/place/Unicentro+Soyapango/@13.7085801,-89.1399873,15z/data=!4m6!3m5!1s0x8f633b5f2f5f4d7d:0x8c6e4f3e4e4e4e4e!8m2!3d13.7085801!4d-89.1399873!16s%2Fg%2F11c52_5y1h"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+            >Ver en mapa</a>
+        </p>
+
+        <p class="footer-line">
+          <strong>Horarios:</strong>
+          <span>Lunes a Sábado: 10:00 AM - 10:00 PM</span><br>
+          <span>Domingos: 10:00 AM - 8:00 PM</span>
+        </p>
+
+        <p class="footer-line">
+          <strong>Teléfono:</strong>
+          <a
+            href="https://wa.me/50369739021"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+            >+503 6973 9021</a>
+        </p>
+      </address>
+    </section>
+
+    <hr class="footer-divider" aria-hidden="true">
+    <p class="footer-copy">&copy; 2024 Salvadorean Bites. Todos los derechos reservados.</p>
+  </div>
+</footer>
 </body>
 </html>
+
