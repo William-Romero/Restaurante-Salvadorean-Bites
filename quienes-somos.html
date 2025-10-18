@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -7,20 +7,23 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; background: #faf6f2; color: #333; }
         header { background: #a83232; color: #fff; padding: 2rem 1rem; text-align: center; }
+        nav a { color: #fff; text-decoration: none; margin: 0 0.5rem; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
         .container { max-width: 700px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; }
         h2 { color: #a83232; }
         footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+        .footer-link { color: #fff; }
     </style>
 </head>
 <body>
   <header>
-        <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" style="width:200px; border-radius:50%; margin-bottom:1rem;">
-        <nav>
+        <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg" alt="Salvadorean Bites" style="width:200px; border-radius:50%; margin-bottom:1rem;">
+        <nav aria-label="Navegación principal">
             <a href="#quienes-somos">Quiénes Somos</a>
-            <a href="#index.html">Menú</a>
-            <a href="#promos.html">Promociones</a>
-            <a href="#galeria.html">Galería</a>
-            <a href="#contacto.html">Contáctanos</a>
+            <a href="index.html">Menú</a>
+            <a href="promos.html">Promociones</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contáctanos</a>
         </nav>
         <h1>Salvadorean Bites</h1>
         <p>Fresh. Local. Tasty.</p>
@@ -55,7 +58,7 @@
           <strong>Dirección:</strong>
           <span> Unicentro, Soyapango, San Salvador </span>
           <a
-            href="https://www.google.com/maps/place/Unicentro+Soyapango/@13.7085801,-89.1399873,15z/data=!4m6!3m5!1s0x8f633b5f2f5f4d7d:0x8c6e4f3e4e4e4e4e!8m2!3d13.7085801!4d-89.1399873!16s%2Fg%2F11c52_5y1h"
+            href="https://www.google.com/maps/place/Unicentro+Soyapango"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-link"
@@ -71,11 +74,16 @@
         <p class="footer-line">
           <strong>Teléfono:</strong>
           <a
+            href="tel:+50369739021"
+            class="footer-link"
+            >+503 6973 9021</a>
+          (También en
+          <a
             href="https://wa.me/50369739021"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-link"
-            >+503 6973 9021</a>
+            >WhatsApp</a>)
         </p>
       </address>
     </section>
