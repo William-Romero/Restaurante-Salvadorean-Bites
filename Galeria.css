@@ -1,0 +1,109 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #faf6f2;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #a83232;
+  text-transform: lowercase;
+  margin-top: 2rem;
+}
+
+h3 {
+  text-align: center;
+  color: #800000;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+
+.carousel-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem auto;
+  max-width: 1700px;
+}
+
+.carousel-container {
+  width: 400px;
+  height: 450px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+.carousel-container img.active {
+  display: block;
+  animation: fade 0.8s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.dish-name {
+  color: #a83232;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.dish-desc {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0 0.5rem;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  background-color: #a83232;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #800000;
+}
+
+
+@media (max-width: 900px) {
+  .carousel-container {
+    width: 90%;
+  }
+}
