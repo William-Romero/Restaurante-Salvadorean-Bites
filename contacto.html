@@ -6,6 +6,7 @@
     <title>salvadorean bites</title>
 
    <style>
+    /* ------ Define los colores y estilos de la página ------ */
    :root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
    
     *{box-sizing:border-box}
@@ -25,6 +26,7 @@
     header h1, #menu-title { text-align:center; margin:.25rem 0; }
     .section-title{display:block;text-align:center;margin:0 0 .6rem 0}
     .section-title h3{color:var(--brand);margin:0;font-size:1.05rem;display:inline-block}
+
     /* ------------- estilo de la caja de contacto 1 columna  temas centrados -------------- */
     #contact {
       display: flex;
@@ -45,8 +47,6 @@
     #contact label {
       text-align: left;
     }
-
-    #contact input,
     #contact textarea {
       padding: 0.75rem;
       border: 1px solid #ccc;
@@ -68,7 +68,7 @@
     #contact button:hover {
       background-color: darken(#a83232, 10%);
     }
-    /* estilos del footer con el mismo diseño que el resto de la página */
+    /* estilo del footer */
     footer {
       background: var(--brand);
       color: #fff;
@@ -87,12 +87,11 @@
     }
 
     </style>
- 
- 
- <header>
+            <!--Encabezado de la página-->
+  <header>
     <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" alt="Salvadorean Bites" class="logo" />
     <nav aria-label="Navegación principal">
-      <a href="quienes-somos.html"aria-current="page" >Quiénes Somos</a>
+      <a href="quienes-somos.html"aria-current="page" >Contáctanos</a>
       <a href="index.html" >Menú</a>
       <a href="promos.html">Promociones</a>
       <a href="galeria.html">Galería</a>
@@ -143,4 +142,3 @@
     </footer>
 </body>
 </html>
-
