@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Nuestros Platillos | Salvadorean Bites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #faf6f2;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #a83232;
+      text-transform: lowercase;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      text-align: center;
+      color: #800000;
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+    }
+
+  
+    .carousel-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem auto;
+      max-width: 1700px;
+    }
+
+.carousel-container {
+  width: 400px;          
+  height: 450px;         
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: 250px;         
+  object-fit: cover;     
+  border-radius: 10px;
+  display: none;
+}
+
+
+    .carousel-container img {
+      width: 100%;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .carousel-container img.active {
+      display: block;
+      animation: fade 0.8s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .dish-name {
+      color: #a83232;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    .dish-desc {
+      font-size: 1rem;
+      color: #555;
+      margin: 0.5rem 0 0.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .buttons button {
+      background-color: #a83232;
+      border: none;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #800000;
+    }
+
+    @media (max-width: 900px) {
+      .carousel-container {
+        width: 90%;
+      }
+    }
+  </style>
+
+  <header style="background-color:#b30000; color:white; display:flex; align-items:center; justify-content:space-between; padding:0.5rem 1.5rem; height:100px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center;">
+        <img src="https://cdn7.kiwilimon.com/recetaimagen/2806/960x640/25790.jpg.jpg" 
+             alt="Salvadorean Bites" 
+             style="width:80px; height:80px; border-radius:50%; margin-right:1rem;">
+        <div>
+            <h1 style="margin:0; font-size:1.5rem;">Salvadorean Bites</h1>
+            <p style="margin:0; font-size:0.9rem;">Fresh. Local. Tasty.</p>
+        </div>
+    </div>
+
+<nav>
+    <a href="Restaurante.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Quiénes Somos</a>
+    <a href="menu.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Menú</a>
+    <a href="galeria.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Galería</a>
+    <a href="contacto.html" style="color:#fff; text-decoration:none; margin:0 0.8rem; font-weight:bold;">Contáctanos</a>
+</nav>
+</header>
+</head>
+
+<body>
+
+  <h2>nuestros platillos</h2>
+
+  <!-- ===== de entrada ===== -->
+  <h3 id="entradas"></h3>
+  <div class="carousel-row">
+    <div class="carousel-container">
+      <img src="https://i.ytimg.com/vi/dp6oQ7cekPc/maxresdefault.jpg" class="active" alt="Yuca frita">
+      <img src="https://i.ytimg.com/vi/XFIHpE1R9D0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAgw2J1hWglqis7g9FVBYx1znYFCQ" alt="Empanadas de pollo">
+      <img src="https://www.ediblela.com/uploads/2024/07/Platanos-Fritos-con-Frijoles-Licuados_Page_1_Image_0001-1-3-scaled.jpg?format=webp&optimize=high&precrop=4%3A3%2Csmart" alt="Plátanos fritos">
+      <div class="dish-name">Entradas</div>
+      <div class="dish-desc" id="desc-entradas">Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido.</div>
+      <div class="buttons">
+        <button class="prev">⬅️ Anterior</button>
+        <button class="next">Siguiente ➡️</button>
+      </div>
+    </div>
+
+    <!-- ===== platos fuertes ===== -->
+    <div class="carousel-container">
+      <img src="https://mandolina.co/wp-content/uploads/2024/06/carne-asada-a-la-parrilla-1080x550-1-1200x900.jpg" class="active" alt="Carne asada">
+      <img src="https://comidasperuanas.net/wp-content/uploads/2020/12/Pollo-a-la-parrilla-peruano.jpg" alt="Pollo a la parrilla">
+      <img src="https://recetas123.net/wp-content/uploads/pescado-frito1-480x270.jpg" alt="Pescado frito">
+      <img src="https://www.paulinacocina.net/wp-content/uploads/2023/04/20230410_111551_0002.jpg" alt="Pupusas">
+      <div class="dish-name">Platos Fuertes</div>
+      <div class="dish-desc" id="desc-platos">Deliciosa carne asada a la parrilla, servida con frijoles y ensalada.</div>
+      <div class="buttons">
+        <button class="prev">⬅️ Anterior</button>
+        <button class="next">Siguiente ➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== bebidas ===== -->
+  <div class="carousel-row">
+    <div class="carousel-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1znaTgVqCEMw2DO0i_KYHXJFLLE4P3lpVw&s" class="active" alt="Refrescos">
+      <img src="https://www.thefoodieskitchen.com/wp-content/uploads/2013/12/11246638375_f140dfc430_c-1.jpg" alt="Bebidas calientes">
+      <div class="dish-name">Bebidas</div>
+      <div class="dish-desc" id="desc-bebidas">Elige entre una refrescante horchata, tamarindo o jamaica.</div>
+      <div class="buttons">
+        <button class="prev">⬅️ Anterior</button>
+        <button class="next">Siguiente ➡️</button>
+      </div>
+    </div>
+  <!-- ===== Parte de postre ===== -->
+    <div class="carousel-container">
+      <img src="https://mojo.generalmills.com/api/public/content/d0OzlvMawUWJ6G_dDAdWQg_gmi_hi_res_jpeg.jpeg?v=271f2d6e&t=16e3ce250f244648bef28c5949fb99ff" class="active" alt="Flan">
+      <img src="https://i.ytimg.com/vi/v5qzRhxAjbk/maxresdefault.jpg" alt="Quesadilla">
+      <div class="dish-name">Postres</div>
+      <div class="dish-desc" id="desc-postres">Delicioso flan de vainilla, suave y cremoso.</div>
+      <div class="buttons">
+        <button class="prev">⬅️ Anterior</button>
+        <button class="next">Siguiente ➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const info = {
+      entradas: [
+        {desc: "Deliciosas y crujientes yucas fritas, acompañadas de salsa de tomate y curtido."},
+        {desc: "Empanadas rellenas de pollo desmenuzado, acompañadas de salsa de tomate y curtido."},
+        {desc: "Plátanos maduros fritos, servidos con crema y frijoles."}
+      ],
+      platos: [
+        {desc: "Deliciosa carne asada a la parrilla, servida con frijoles y ensalada."},
+        {desc: "Jugoso pollo a la parrilla, servido con arroz y ensalada."},
+        {desc: "Delicioso pescado frito, servido con arroz y ensalada."},
+        {desc: "Pupusas tradicionales y de especialidad: frijol con queso, revueltas, birria y más."}
+      ],
+      bebidas: [
+        {desc: "Elige entre una refrescante horchata, tamarindo o jamaica."},
+        {desc: "Elige entre una deliciosa taza de café, chocolate caliente o té."}
+      ],
+      postres: [
+        {desc: "Delicioso flan de vainilla, suave y cremoso."},
+        {desc: "Deliciosa quesadilla salvadoreña, perfecta para acompañar el café de la tarde."}
+      ]
+    };
+
+    document.querySelectorAll('.carousel-container').forEach(container => {
+      const images = container.querySelectorAll('img');
+      const id = container.querySelector('.dish-desc').id.split('-')[1];
+      const descEl = document.getElementById(`desc-${id}`);
+      let current = 0;
+
+      const showImage = (index) => {
+        images.forEach((img, i) => img.classList.toggle('active', i === index));
+        descEl.textContent = info[id][index].desc;
+      };
+
+      container.querySelector('.prev').addEventListener('click', () => {
+        current = (current - 1 + images.length) % images.length;
+        showImage(current);
+      });
+
+      container.querySelector('.next').addEventListener('click', () => {
+        current = (current + 1) % images.length;
+        showImage(current);
+      });
+    });
+  </script>
+
+</body>
+</html>
