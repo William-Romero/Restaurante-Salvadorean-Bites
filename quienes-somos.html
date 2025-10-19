@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="header&footer.css">
 	<style>
 
+	footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+            a.white-link { color: #fff; text-decoration: none; }
 	:root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
@@ -49,10 +51,6 @@
 	.values-list{list-style:none;padding:0;margin:0}
 	.values-list li{padding:.5rem 0;border-top:1px dashed #f1efee;color:var(--muted);line-height:1.45}
 	.values-list li:first-child{border-top:none}
-
-	  }
-	footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
-            a.white-link { color: #fff; text-decoration: none; }
 
 	@media (max-width:900px){
 		.grid-3{grid-template-columns:repeat(2,1fr);gap:.8rem}
@@ -127,27 +125,21 @@
 </main>
 	<main>
     </main>
-<footer>
-    <h2>Ubicación y Contacto</h2>
-    <p>
-        <a href="https://wa.me/50369739021" class="white-link">‪+503 6973-9021‬</a>
-    </p>
-    <p>
-        <a href="tel:‪+50322223333‬" class="white-link">‪+503 2222-3333‬</a>
-    </p>
-    <p>
-        <a href="mailto:contacto@salvadoreanbites.com" class="white-link">contacto@salvadoreanbites.com</a>
-    </p>
-    <p>
-        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank" class="white-link">Unicentro Soyapango, San Salvador</a>
-    </p>
-    <small>© 2025 Salvadorean Bite. Todos los derechos reservados.</small>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+<footer id="contacto" class="bg-danger text-light py-4">
+        <div class="container text-center">
+            <p><a href="https://wa.me/50369739021" class="text-white text-decoration-none"><i class="bi bi-whatsapp"></i> +503 6973-9021</a></p>
+            <p><a href="tel:+50322223333" class="text-white text-decoration-none"><i class="bi bi-telephone"></i> +503 2222-3333</a></p>
+            <p><a href="mailto:contacto@salvadoreanbites.com" class="text-white text-decoration-none"><i class="bi bi-envelope"></i> contacto@salvadoreanbites.com</a></p>
+            <p><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.052095698684!2d-89.14685376716508!3d13.717660932513878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63377992279d1f%3A0x14961537e6a76f3f!2sUnicentro%20Soyapango%2C%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1760822301931!5m2!1ses-419!2ssv" target="_blank" class="text-white text-decoration-none"><i class="bi bi-geo-alt"></i> Unicentro Soyapango, San Salvador</a></p>
+            <small>&copy; 2025 Salvadorean Bite. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
 
 
 
