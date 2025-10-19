@@ -5,17 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Quiénes somos | Salvadorean Bites</title>
 	<style>
+		
 		:root{--brand:#a83232;--bg:#faf6f2;--card:#fff;--text:#333;--muted:#666}
-		*{box-sizing:border-box}
-		body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-		header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
-		.brand{display:flex;align-items:center;gap:1rem;justify-content:center}
-		.brand img{width:84px;height:84px;border-radius:50%;object-fit:cover}
-		.brand-text h1{margin:.15rem 0;font-size:1.35rem}
-		.brand-text p{margin:0;font-size:.9rem;opacity:.95}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:var(--brand);color:#fff;padding:1.25rem 1rem;text-align:center}
+    .logo{width:120px;height:120px;border-radius:50%;display:block;margin:0 auto .5rem;object-fit:cover}
 
-		nav[aria-label="Navegación principal"]{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
-		nav a{color:#fff;text-decoration:none;margin:.2rem .4rem;font-weight:700;padding:.3rem .5rem;border-radius:6px}
+    nav[aria-label="Navegación principal"]{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
+    nav a{color:#fff;text-decoration:none;margin:.2rem .4rem;font-weight:700;padding:.3rem .5rem;border-radius:6px}
+    main{max-width:980px;margin:1.5rem auto;padding:0 1rem}
+    .card{background:var(--card);border-radius:10px;padding:1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .menu-nav{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:.5rem 0 1rem}
+    .menu-nav a{background:rgba(168,50,50,.08);color:var(--brand);padding:.35rem .6rem;border-radius:6px;text-decoration:none;font-weight:700}
+    .menu-section{padding:1rem;border-top:1px solid #f1f1f1;margin-top:.5rem}
+    .menu-section:first-of-type{border-top:none;padding-top:0}	
+	header h1, #menu-title { text-align:center; margin:.25rem 0; }
 
 		main{max-width:980px;margin:1.5rem auto;padding:0 1rem}
 		.card{background:var(--card);border-radius:10px;padding:1.25rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
@@ -36,7 +41,8 @@
 		.values-list li{padding:.5rem 0;border-top:1px dashed #f1efee;font-family:Arial,Helvetica,sans-serif;color:var(--muted);line-height:1.45}
 		.values-list li:first-child{border-top:none}
 
-		footer{max-width:980px;margin:1rem auto 2rem;padding:0 1rem;color:var(--muted);font-size:.92rem;text-align:center}
+		footer { background: #a83232; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+            a.white-link { color: #fff; text-decoration: none; }
 
 		
 		@media (max-width:1024px){
@@ -156,4 +162,5 @@
 
 </body>
 </html>
+
 
